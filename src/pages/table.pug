@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+	include include/head.pug
+	+head({
+		title: 'Test'
+	})
+
+	body
+		div.wrapper
+			include ../blocks/mixins.pug
+
+			div(style="padding: 50px 20px; margin: 0 auto; max-width: 500px;")
+				h3 у body заменить это:
+				div width: 990px;
+				div max-width: 95%;
+
+				h3 на это:
+				div width: 100%;
+				div max-width: 990px;
+
+				br
+				h3 таблице прописать это:
+				div word-break: break-all;
+
+				br
+				br
+				hr
+				br
+				br
+
+				h2(style="line-height: 34px;") Второй вариант <br>(мне он нравиться больш): <br><br>добавить блок обертки для таблице, с оверфлох авто
+
+		include include/script.pug

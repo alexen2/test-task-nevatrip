@@ -1,0 +1,43 @@
+.excursion-features-item {
+	position: relative;
+
+	padding-left: 36px;
+
+	@media(min-width: 768px) {
+		padding-left: 30px;
+	}
+}
+.excursion-features-item .icon {
+	position: absolute;
+	top: 5px;
+	left: 0;
+
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin-right: 20px;
+}
+.excursion-features-item .time-badge {
+	margin-top: 3px;
+	margin-right: 4px;
+
+	@media(min-width: 768px) {
+		margin-top: 5px;
+		margin-right: 8px;
+	}
+}
+.excursion-features-item.timesList {
+	max-height: 54px;
+	overflow: hidden;
+
+	transition: all 0.4s;
+
+	@media(min-width: 768px) {
+		max-height: 66px;
+	}
+}
+.excursion-features-item.timesList--show {
+	max-height: none;
+
+	transition: all 0.4s;
+}

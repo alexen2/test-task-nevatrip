@@ -1,0 +1,29 @@
+mixin button(data)
+	if data.type && data.type === 'link'
+		- var link = '#'
+		if data.url
+			- var link = data.url
+
+		a.button(href=link, class!=attributes.class, id!=attributes.id, role="button", rel!=attributes.rel target!=attributes.target)
+			if data.icon_l
+				+icon(data.icon_l)
+
+			if data.text
+				span.button__text.typography-body!= data.text
+
+			if data.icon_r
+				+icon(data.icon_r)
+	else
+		- var type = 'button'
+		if data.type && data.type === 'submit'
+			- var type = 'submit'
+
+		button.button(class!=attributes.class, data-id=data.data_id, id!=attributes.id, type=type, name=data.name, rel!=attributes.rel)
+			if data.icon_l
+				+icon(data.icon_l)
+
+			if data.text
+				span.button__text.typography-body!= data.text
+
+			if data.icon_r
+				+icon(data.icon_r)

@@ -1,0 +1,10 @@
+mixin excursion-features-item(text, timesArray=[])
+	div.excursion-features-item(class!=attributes.class)
+		+icon('icon-check-mark')
+		span.body.excursion-features-item__text!= text
+
+		if timesArray.length
+			|&nbsp;&nbsp;
+			span.excursion-features-item__list
+				- for (var i = 0; i < timesArray.length; i++)
+					+time-badge(timesArray[i])

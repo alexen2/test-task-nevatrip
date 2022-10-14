@@ -1,0 +1,19 @@
+.badge {
+	display: flex;
+	align-items: center;
+	padding: 8px 19px;
+
+	font-size: 12px;
+	line-height: 20px;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: #3E3E3E;
+
+	background-color: #FED74B;
+
+	@media(min-width: 768px) {
+		padding: 12px 32px;
+
+		font-size: 16px;
+	}
+}

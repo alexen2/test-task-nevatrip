@@ -1,0 +1,36 @@
+include excursion-features-item/excursion-features-item.pug
+
+mixin excursion(data)
+	div.excursion
+		div.excursion__img
+			if data.badge
+				+badge(data.badge)
+
+			img(src="images/" + data.img alt=data.title)
+
+		div.excursion__body
+			div.excursion__top
+				div.excursion__time
+					+icon('icon-clock-circular-outline')
+					span= data.time 
+
+				div.excursion__title
+					h2.h2= data.title
+
+			div.excursion__features
+				- for (var i = 0; i < data.features.length; i++)
+					+excursion-features-item(data.features[i])
+
+				+excursion-features-item(data.nextFlight.text, data.nextFlight.timesArray)(class="timesList")
+
+			div.excursion__footer
+				div.excursion__price
+					div.excursion__price-default= data.priceDefault
+						img(src="images/icon-ruble-currency-sign-2.svg" alt="rubl icon")
+
+					if data.pricePier
+						div.excursion__price-pier= data.pricePier
+							img(src="images/icon-ruble-currency-sign.svg" alt="rubl icon")
+							|на причале
+
+				+button({text: 'Подробнее'})

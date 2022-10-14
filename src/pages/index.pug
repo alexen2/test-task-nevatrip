@@ -1,0 +1,14 @@
+doctype html
+html(lang="en")
+	include include/head.pug
+	+head({
+		title: 'Test'
+	})
+
+	body
+		div.wrapper
+			include ../blocks/mixins.pug
+
+			include ../blocks/excursion-catalog/excursion-catalog.pug
+
+		include include/script.pug
